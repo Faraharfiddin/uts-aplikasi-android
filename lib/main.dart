@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart'; // Untuk membuka link sosial media
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'screen/movie_list_page.dart'; // Import screen baru
 
 
 void main() {
@@ -71,7 +72,12 @@ class HomePage extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.movie),
               title: const Text("Movie List"),
-              onTap: () => _launchURL(''), // Ganti link sesuai kebutuhan
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MovieListPage()),
+                  );
+              }
             ),
             ListTile(
               leading: const FaIcon(FontAwesomeIcons.whatsapp),
@@ -81,7 +87,7 @@ class HomePage extends StatelessWidget {
             ListTile(
               leading: const FaIcon(FontAwesomeIcons.instagram),
               title: const Text("Instagram"),
-              onTap: () => _launchURL(''), // Link Instagram
+              onTap: () => _launchURL('https://www.instagram.com/farhanaaode/'), // Link Instagram
             ),
             const Divider(),
             ListTile(
@@ -94,6 +100,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+
       body: const Center(
         child: SingleChildScrollView(
           child: Column(
@@ -122,7 +129,7 @@ class HomePage extends StatelessWidget {
               Wrap(
                 spacing: 10,
                 children: [
-                  _SkillChip(label: 'Mobile Application Engineer'),
+                  _SkillChip(label: 'Institut Teknologi & Bisnis Stikom Ambon'),
                 ],
               ),
               SizedBox(height: 20),
@@ -135,7 +142,7 @@ class HomePage extends StatelessWidget {
                   child: Column(
                     children: [
                   Text(
-                  'Flutter Developer that loves to learn new things. I’m currently working as a Flutter Developer at Kompas Gramedia.',
+                  'Saya adalah seorang mahasiswa yang sedang berusaha meraih gelar S.KOM ( Sarjana Komputer) di Institut Teknologi & Bisnis Stikom Ambon',
                   textAlign: TextAlign.center,
                 ),
                     ],
@@ -148,8 +155,8 @@ class HomePage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _InfoCard(title: 'Experience', value: '3+ Years'),
-                  _InfoCard(title: 'Projects', value: '20+'),
+                  _InfoCard(title: 'Semester', value: '5'),
+                  _InfoCard(title: 'Konsentrasi', value: 'Mobile'),
                 ],
               ),
               SizedBox(height: 20),

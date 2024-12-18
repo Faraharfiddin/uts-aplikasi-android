@@ -55,6 +55,10 @@ dev_dependencies:
 flutter:
   assets:
     - assets/profile.png
+    - assets/avatar.jpg
+    - assets/dark_knight.jpg
+    - assets/interstellar.jpg
+    - assets/inception.jpg
 
 
   # The following line ensures that the Material Icons font is
